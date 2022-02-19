@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright 2019, The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<!-- Note that the animations may show red in Android Studio;
+     however, they are present and working perfectly fine. -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_presentation">
+
+    <fragment
+        android:id="@+id/salat_tracker_fragment"
+        android:name="com.example.android.trackmysalatquality.salattracker.SalatTrackerFragment"
+        android:label="@string/salat_tracker_fragment"
+        tools:layout="@layout/fragment_salat_tracker">
+        <action
+            android:id="@+id/action_salat_tracker_fragment_to_salat_choice_fragment2"
+            app:destination="@id/salat_choice_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/salat_choice_fragment"
+        android:name="com.example.android.trackmysalatquality.salatchoice.SalatChoiceFragment"
+        android:label="@string/salat_choice_fragment"
+        tools:layout="@layout/fragment_salat_choice">
+        <argument
+            android:name="salatKey"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_salat_choice_fragment_to_salat_tracker_fragment"
+            app:destination="@id/salat_tracker_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_presentation"
+        android:name="com.example.android.trackmysalatquality.presentation.PresentationFragment"
+        android:label="fragment_presentation"
+        tools:layout="@layout/fragment_presentation" >
+        <action
+            android:id="@+id/action_fragment_presentation_to_salat_tracker_fragment2"
+            app:destination="@id/salat_tracker_fragment" />
+        <action
+            android:id="@+id/action_fragment_presentation_to_assistanceFragment"
+            app:destination="@id/assistanceFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/assistanceFragment"
+        android:name="com.example.android.trackmysalatquality.assistance.AssistanceFragment"
+        android:label="fragment_assistance"
+        tools:layout="@layout/fragment_assistance" />
+
+</navigation>

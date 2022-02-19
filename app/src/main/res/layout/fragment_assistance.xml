@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".assistance.AssistanceFragment"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222222">
+
+        <TextView
+            android:id="@+id/tv_square"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@color/green_color"
+            android:gravity="center"
+            android:text="Salat clone!"
+            android:textColor="@color/white_text_color"
+            android:textSize="20sp"
+            android:layout_centerInParent="true" />
+
+</RelativeLayout>
