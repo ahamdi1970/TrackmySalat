@@ -49,7 +49,7 @@ class SalatChoiceFragment : Fragment() {
         val binding: FragmentSalatChoiceBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_salat_choice, container, false)
 
-        val application = requireNotNull(this.activity).application
+        val application = requireActivity().application // was val application = requireNotNull(this.activity).application
 
         val arguments = SalatChoiceFragmentArgs.fromBundle(requireArguments())
 

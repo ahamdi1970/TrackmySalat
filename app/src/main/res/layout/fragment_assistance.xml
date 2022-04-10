@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".assistance.AssistanceFragment"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#222222">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#222222"
+        tools:context=".assistance.AssistanceFragment">
+
 
         <TextView
             android:id="@+id/tv_square"
@@ -16,6 +20,18 @@
             android:text="Salat clone!"
             android:textColor="@color/white_text_color"
             android:textSize="20sp"
-            android:layout_centerInParent="true" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <data>
+
+        <variable
+            name="assistanceViewModel"
+            type="com.example.android.trackmysalatquality.assistance.AssistanceViewModel" />
+    </data>
+</layout>
